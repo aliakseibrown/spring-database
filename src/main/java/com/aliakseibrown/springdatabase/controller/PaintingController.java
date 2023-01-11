@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+import java.util.Optional;
+
 @Controller
 public class PaintingController {
     @Autowired
@@ -27,13 +30,13 @@ public class PaintingController {
 
     @RequestMapping("/paintings")
     @ResponseBody
-    public String getPaintings(){
-        return repo.findAll().toString();
+    public List<Painting> getPaintings(){
+        return repo.findAll(); //json format;
     }
     @RequestMapping("/painting/{id}")
     @ResponseBody
-    public String getPainting(@PathVariable("id") int id){
-        return repo.findById(id).toString();
+    public Optional<Painting> getPainting(@PathVariable("id") int id){
+        return repo.findById(id);
     }
 
     @RequestMapping("/getPainting")
