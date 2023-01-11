@@ -2,6 +2,7 @@ package com.aliakseibrown.springdatabase.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import org.springframework.stereotype.Component;
 @Entity
 @Component
@@ -10,6 +11,8 @@ public class Artist {
     private String name;
     private String country;
     private int count;
+
+    public Artist(){};
 
     public String getName() {
         return name;
@@ -29,6 +32,15 @@ public class Artist {
 
     public int getCount() {
         return count;
+    }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", count=" + count +
+                '}';
     }
 
     public void setCount(int count) {

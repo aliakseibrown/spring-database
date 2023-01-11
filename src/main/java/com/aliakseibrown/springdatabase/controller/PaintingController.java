@@ -27,8 +27,12 @@ public class PaintingController {
     public ModelAndView getPainting(@RequestParam Integer id){
         ModelAndView mv = new ModelAndView("showPainting.jsp");
         Painting painting = repo.findById(id).orElse(new Painting());
+
+        System.out.println(repo.findByYear(1889));
+        System.out.println(repo.findByYearGreaterThan(1880));
         mv.addObject(painting);
         return mv;
     }
+
 
 }

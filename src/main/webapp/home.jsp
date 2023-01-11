@@ -8,8 +8,11 @@
     <form action="addPainting">
         <input type = "text" name="id"><br>
         <input type = "text" name="title"><br>
+        <input type = "text" name="artist"><br>
+        <input type = "text" name="year"><br>
         <input type = "submit"><br>
     </form>
+
     <form action="getPainting">
         <input type = "text" name="id"><br>
         <input type = "submit"><br>
