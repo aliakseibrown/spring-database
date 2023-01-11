@@ -1,4 +1,4 @@
-package com.example.springdatabase;
+package com.aliakseibrown.springdatabase;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
