@@ -29,7 +29,7 @@ public class PaintingController {
     @ResponseBody
     public String getPaintings(){
         return repo.findAll().toString();
-    }t
+    }
     @RequestMapping("/painting/{id}")
     @ResponseBody
     public String getPainting(@PathVariable("id") int id){
