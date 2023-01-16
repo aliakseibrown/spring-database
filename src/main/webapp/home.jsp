@@ -19,18 +19,5 @@
         <input type = "submit"><br>
     </form>
 
-    <a>add artist: </a><form action="addArtist">
-        <a>name: </a><input type = "text" name="name"><br>
-        <a>country: </a><input type = "text" name="country"><br>
-        <a>count: </a><input type = "text" name="count"><br>
-        <input type = "submit"><br>
-    </form>
-
-    <form action="getArtist">
-        <a>get artist: </a>
-        <input type = "text" name="name"><br>
-        <input type = "submit"><br>
-    </form>
-
 </body>
 </html>

@@ -22,12 +22,12 @@ public class ArtistController {
 //        return mav;
 //        // @RestController doesn't return jsp files, works only with @Controller
 //    }
-
-    @RequestMapping("/addArtist")
-    public String addPainting(Artist artist){
-        repo.save(artist);
-        return "home.jsp";
-    }
+    
+//    @RequestMapping("/addArtist")
+//    public String addPainting(Artist artist){
+//        repo.save(artist);
+//        return "home.jsp";
+//    }
 
     @DeleteMapping("/artist/{name}")
     public String deleteArtist(@PathVariable String name){
