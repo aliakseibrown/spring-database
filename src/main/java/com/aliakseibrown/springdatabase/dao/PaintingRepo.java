@@ -14,5 +14,4 @@ public interface PaintingRepo extends JpaRepository<Painting, Integer> { // JpaR
 
     @Query("from Painting where year>?1 order by year")
     List<Painting> findByYearGreaterThanSorted(int year);
-
 }

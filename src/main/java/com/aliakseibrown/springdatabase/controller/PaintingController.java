@@ -29,12 +29,19 @@ public class PaintingController {
     }
 
     @DeleteMapping("/painting/{id}")
-    public String deletePainting(@PathVariable int id){s
+    public String deletePainting(@PathVariable int id){
         Painting a = repo.getOne(id);
         repo.delete(a);
         return "deleted";
     }
-    @PostMapping("/painting")
+
+    @PutMapping(path = "/painting", consumes={"application/json"})
+    public Painting updatePaintings(@RequestBody Painting painting){
+        repo.save(painting);
+        return painting;
+    }
+
+    @PostMapping(path = "/painting", consumes={"application/json"})
     public Painting addPaintings(@RequestBody(required=false) Painting painting){
         repo.save(painting);
         return painting;
