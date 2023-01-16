@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.locks.ReadWriteLock;
 
 @RestController
 public class PaintingController {
@@ -27,16 +28,22 @@ public class PaintingController {
         return "home.jsp";
     }
 
-    @RequestMapping(path="/paintings", produces={"application/json"}) //set GET receive only xml format of data
+    @DeleteMapping("/painting/{id}")
+    public String deletePainting(@PathVariable int id){s
+        Painting a = repo.getOne(id);
+        repo.delete(a);
+        return "deleted";
+    }
+    @PostMapping("/painting")
+    public Painting addPaintings(@RequestBody(required=false) Painting painting){
+        repo.save(painting);
+        return painting;
+    }
+
+    @GetMapping(path="/paintings", produces={"application/json"}) //set GET receive only xml format of data
     //@RequestMapping("/paintings")
     public List<Painting> getPaintings(){
         return repo.findAll();
-    }
-
-    @PostMapping(path="/painting",produces={"application/json"})
-    public Painting getPaintings(Painting painting){
-        repo.save(painting);
-        return painting;
     }
 
     @RequestMapping(path="/painting/{id}", produces={"application/json"})
